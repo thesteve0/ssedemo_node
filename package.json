@@ -1,5 +1,5 @@
 {
-  "name": "OpenShift-Sample-App",
+  "name": "Server side events",
   "version": "1.0.0",
   "description": "OpenShift Sample Application",
   "keywords": [
@@ -9,14 +9,13 @@
     "openshift"
   ],
   "author": {
-    "name": "OpenShift",
-    "email": "ramr@example.org",
+    "name": "TheSteve0",
+    "email": "spousty@redhat.com",
     "url": "http://www.openshift.com/"
   },
   "homepage": "http://www.openshift.com/",
   "repository": {
-    "type": "git",
-    "url": "https://github.com/openshift/origin-server"
+    "type": "git",    
   },
 
   "engines": {
@@ -24,8 +23,7 @@
     "npm": ">= 1.0.0"
   },
 
-  "dependencies": {
-  },
+  "dependencies": {},
   "devDependencies": {},
   "bundleDependencies": [],
 
