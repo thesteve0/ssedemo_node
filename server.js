@@ -28,7 +28,15 @@ http.createServer(function(req, res) {
 function sendSSE(req, res) {
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache'
+    'Cache-Control': 'no-cache',
+    'Connection': 'keep-alive'
+  });
+
+  var id = (new Date()).toLocaleTimeString();
+
+  // Sends a SSE every 5 seconds on a single connection.
+  setInterval(function() {
+    constructSSE(res, id, (new Date()).toLocaleTimeString());
   }, 5000);
 
   constructSSE(res, id, (new Date()).toLocaleTimeString());
