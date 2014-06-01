@@ -19,7 +19,8 @@ http.createServer(function(req, res) {
     }
   } else {
     res.writeHead(200, {'Content-Type': 'text/html'});
-    res.write(fs.readFileSync('sse-node.html'));
+    res.write('hello world');
+    #res.write(fs.readFileSync('sse-node.html'));
     res.end();
   }
 }).listen(port, ipaddr);
@@ -27,15 +28,7 @@ http.createServer(function(req, res) {
 function sendSSE(req, res) {
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache',
-    'Connection': 'keep-alive'
-  });
-
-  var id = (new Date()).toLocaleTimeString();
-
-  // Sends a SSE every 5 seconds on a single connection.
-  setInterval(function() {
-    constructSSE(res, id, (new Date()).toLocaleTimeString());
+    'Cache-Control': 'no-cache', ());
   }, 5000);
 
   constructSSE(res, id, (new Date()).toLocaleTimeString());
