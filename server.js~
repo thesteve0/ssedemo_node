@@ -28,7 +28,7 @@ http.createServer(function(req, res) {
 function sendSSE(req, res) {
   res.writeHead(200, {
     'Content-Type': 'text/event-stream',
-    'Cache-Control': 'no-cache';
+    'Cache-Control': 'no-cache'
   }, 5000);
 
   constructSSE(res, id, (new Date()).toLocaleTimeString());
